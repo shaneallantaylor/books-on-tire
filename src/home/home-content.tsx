@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import FirstParagraph from './first-paragraph'
+import DropCap from '../common/drop-cap'
 
-export default function Home() {
+export function HomeContent() {
   return (
     <div>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
         <h1>
           Home Page
         </h1>
-        <FirstParagraph text="Wow, I love cats" />
+        <DropCap text="Wow, I love cats" />
       </main>
       <Link href='/first'>Go to first</Link>
     </div>

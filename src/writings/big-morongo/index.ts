@@ -1,0 +1,1 @@
+export { BigMorongoPage } from './big-morongo-page';

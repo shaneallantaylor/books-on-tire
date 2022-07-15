@@ -1,0 +1,1 @@
+export { HomeContent as HomePage } from './home-content';

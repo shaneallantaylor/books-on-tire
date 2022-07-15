@@ -7,11 +7,11 @@ const StyledFirstLetter = styled('span', {
   fontWeight: '700'
 });
 
-interface FirstParagraphModel extends HTMLAttributes<HTMLElement> {
+interface DropCapModel extends HTMLAttributes<HTMLElement> {
   text: string
 }
 
-export default function FirstParagraph({ text, ...props }: FirstParagraphModel) {
+export default function DropCap({ text, ...props }: DropCapModel) {
 
   const firstLetter = text.slice(0, 1);
   const theRestOfIt = text.slice(1);
