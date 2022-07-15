@@ -15,9 +15,18 @@ export const {
       gray400: 'gainsboro',
       gray500: 'lightgray',
     },
+    fonts: {
+      nice: 'Inter, serif, apple-system, sans-serif',
+      code: 'Söhne Mono, menlo, monospace',
+    },
+    fontSizes: {
+    }
   },
   media: {
-    bp1: '(min-width: 480px)',
+    smAndUp: '(min-width: 640px)',
+    medAndUp: '(min-width: 768px)',
+    lgAndUp: '(min-width: 1024px)',
+    xlAndUp: '(min-width: 1440px)',
   },
   utils: {
     marginX: (value: string) => ({ marginLeft: value, marginRight: value }),

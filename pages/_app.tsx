@@ -1,18 +1,18 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { globalCss } from '@stitches/react';
-
-const globalStyles = globalCss({
-  '*': {
-    margin: 0,
-    padding: 0,
-    boxSizing: 'border-box',
-  },
-});
+import Header from '../src/components/header';
+import Layout from '../src/components/layout';
+import { globalStyles } from '../src/styles/global';
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Header />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  )
 }
 
 export default MyApp
