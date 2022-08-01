@@ -62,7 +62,6 @@ export function AugustUpdateContent() {
             <Image
               src={hammockView}
               alt='Clear blue skies over a desert landscape with two hammock posts in the foreground.'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>View from the hammocks.</figcaption>
           </figure>
@@ -70,7 +69,6 @@ export function AugustUpdateContent() {
             <Image
               src={inHammocks}
               alt='The faces of author and his partner laying back in hammocks, each face is not fully in frame. The author did his best taking this photo, but his partner was not impressed.'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>Alyssa and I enjoying the hammocks.</figcaption>
           </figure>
@@ -83,7 +81,6 @@ export function AugustUpdateContent() {
             <Image
               src={bridgeInMequite}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>A small brdige on Mesquite Trail.</figcaption>
           </figure>
@@ -91,7 +88,6 @@ export function AugustUpdateContent() {
             <Image
               src={alyssaLooking}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>Alyssa looking for a bird.</figcaption>
           </figure>
@@ -99,7 +95,6 @@ export function AugustUpdateContent() {
             <Image
               src={anotherEdge}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>The Northern edge of the Preserve.</figcaption>
           </figure>
@@ -107,7 +102,6 @@ export function AugustUpdateContent() {
             <Image
               src={deerDeep}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>A deer deep in the Preserve.</figcaption>
           </figure>
@@ -115,7 +109,6 @@ export function AugustUpdateContent() {
             <Image
               src={theHills}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>The hills to the West of the Preserve. Cameo by Alyssa's head.</figcaption>
           </figure>
@@ -123,7 +116,6 @@ export function AugustUpdateContent() {
             <Image
               src={lookingAtThePreserve}
               alt='...'
-              onClick={() => alert('you clicked')}
             />
             <figcaption>The Preserve from the outside.</figcaption>
           </figure>
