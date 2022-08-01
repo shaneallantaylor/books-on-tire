@@ -1,5 +1,13 @@
 import { globalCss } from '@stitches/react';
 
+function getRandomEmoji() {
+  const possibleEmojis = ['👋🏻', '🫠', '🦜', '🎉', '💎', '📔', '🍉'];
+
+  // return 'Shane'
+  return possibleEmojis[Math.floor(Math.random() * possibleEmojis.length)];
+
+}
+
 export const globalStyles = globalCss({
   "*": {
     boxSizing: 'border-box',
@@ -19,6 +27,25 @@ export const globalStyles = globalCss({
     lineHeight: "1.5",
     fontSmoothing: "antialiased",
     fontFamily: "$nice"
+  },
+  "main p:first-of-type:before": {
+    content: getRandomEmoji(),
+    float: 'left',
+    fontSize: "6rem",
+    lineHeight: 1.2,
+    fontWeight: "bold",
+    marginRight: "50px",
+    color: "#000",
+    fontFamily: "serif",
+    textShadow: "#d7d7d7 0.04em 0.04em"
+  },
+  "a[target='_blank']": {
+    color: "green",
+  },
+  "a[target='_blank']::after": {
+    content: " \\29C9"
+    // content: " \\1f855"
+
   },
   "img": {
     display: "block",
@@ -63,7 +90,7 @@ export const globalStyles = globalCss({
   },
   "h1": {
     overflowWrap: "break-word",
-    fontSize: "4rem",
+    fontSize: "3.25rem",
     margin: "10px 0",
   },
   "h2": {

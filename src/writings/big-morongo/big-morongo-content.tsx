@@ -1,21 +1,16 @@
 import Head from 'next/head'
-import DropCap from '../../common/drop-cap'
+import Image from 'next/image'
+import header from '../../../public/sefd.png'
+import { styled } from '../../../stitches.config'
+
+const HeaderSection = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  marginBottom: '80px',
+})
 
 export function BigMorongoContent() {
   return (
-    <div>
-      <Head>
-        <title>Birds in the Desert in the Summer</title>
-        <meta name="description" content="Writing words to sooth my feelings." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>
-          Birds
-        </h1>
-        <DropCap text="Wow, I love cats" />
-      </main>
-    </div>
+    <p>Still thinking about this one...</p>
   )
 }

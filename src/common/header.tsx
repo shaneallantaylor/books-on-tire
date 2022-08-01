@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { styled } from "../../stitches.config";
 
 export default function Header() {
 
-  const headerStyles = {
+  const HeaderContainer = styled('header', {
     height: '72px',
     width: '100%',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -10,25 +11,21 @@ export default function Header() {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // borderBottom: '1px solid black',
-    // boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
     padding: '0 20px',
     position: 'fixed',
     top: 0,
-  };
+    zIndex: 1,
+  })
 
-  const pStyles = {
+  const HeaderP = styled('p', {
     padding: 0,
-  }
+  })
 
   return (
-    <header style={headerStyles}>
-      <p style={pStyles}>Vade Mecum</p>
+    <HeaderContainer>
+      <HeaderP>Stuff I Wrote</HeaderP>
       <nav>
-        <Link href="/">
-          Home
-        </Link>
       </nav>
-    </header>
+    </HeaderContainer>
   )
 }

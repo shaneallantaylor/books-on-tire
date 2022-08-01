@@ -1,0 +1,1 @@
+export { AugustUpdatePage } from './august-update-page';
