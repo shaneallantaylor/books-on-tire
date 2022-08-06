@@ -28,7 +28,7 @@ export const globalStyles = globalCss({
     fontSmoothing: "antialiased",
     fontFamily: "$nice"
   },
-  "main p:first-of-type:before": {
+  "main > p:first-of-type:before": {
     content: getRandomEmoji(),
     float: 'left',
     fontSize: "6rem",
