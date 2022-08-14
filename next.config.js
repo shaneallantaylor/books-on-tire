@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
-
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-})
-module.exports = withMDX({
-  pageExtensions: ['ts', 'tsx', 'mdx'],
-})
+module.exports = {
+  images: {
+    domains: [
+      'res.cloudinary.com'
+    ],
+  },
+}

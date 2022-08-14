@@ -1,15 +1,9 @@
 import Head from 'next/head'
-import Image, { StaticImageData } from 'next/image'
-import hammockView from '../../../public/august-update/hammock-view.jpg'
-import inHammocks from '../../../public/august-update/in-hammocks.jpg'
-import bridgeInMequite from '../../../public/august-update/bridge-in-the-preserve.jpg'
-import deerDeep from '../../../public/august-update/deer-deep-in-the-preserve.jpg'
-import anotherEdge from '../../../public/august-update/another-edge-of-the-preserve.jpg'
-import alyssaLooking from '../../../public/august-update/edge-of-the-preserve.jpg'
-import theHills from '../../../public/august-update/just-outside-the-preserve.jpg'
-import lookingAtThePreserve from '../../../public/august-update/looking-at-the-preserve.jpg'
+
+import Image from 'next/image'
 import { styled } from '../../../stitches.config'
 import ImageLightbox from '../../common/image-lightbox'
+import type { ImagePropsModel } from '../../lib/cloudinary/get-images';
 
 const HeaderSection = styled('div', {
   display: 'flex',
@@ -53,30 +47,47 @@ const dictionary = {
   lookingAtThePreserveAlt: 'The Preserve from the outside.'
 }
 
-function BlogImage({
-  src,
-  alt,
-  caption
-}: {
-  src: StaticImageData,
-  alt: string,
-  caption: string
-}): JSX.Element {
-  return (
-    <figure>
-      <ImageLightbox description={alt}>
-        <Image
-          src={src}
-          alt={alt}
-          layout="responsive"
-        />
-      </ImageLightbox>
-      <figcaption>{caption}</figcaption>
-    </figure>
-  )
-}
+export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
 
-export function AugustUpdateContent() {
+  function BlogImageByName({
+    name,
+    alt,
+    caption,
+  }: {
+    name: string;
+    alt: string;
+    caption: string;
+  }) {
+    const { fullsize, orientation, thumbnail } = images[name];
+
+    const thumbnailSize = orientation === 'landscape' ? {
+      height: 614,
+      width: 818,
+    } : {
+      height: 710,
+      width: 532
+    }
+
+    return (
+      <figure>
+        <ImageLightbox
+          orientation={orientation}
+          srcLink={fullsize}
+        >
+          <Image
+            src={thumbnail}
+            alt={alt}
+            height={thumbnailSize.height}
+            width={thumbnailSize.width}
+            layout="responsive"
+          />
+        </ImageLightbox>
+        <figcaption>{caption}</figcaption>
+
+      </figure>
+    )
+  }
+
   return (
     <div>
       <Head>
@@ -94,19 +105,51 @@ export function AugustUpdateContent() {
         <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the <a href='https://www.bigmorongo.org/' target='_blank' rel='noopener noreferrer'>Big Morongo Canyon Preserve</a> to check out the summer birds. It was beautiful and relaxing.</p>
         <p>We stayed at a cozy house a few miles north of Joshua Tree in the town of <a href='https://en.wikipedia.org/wiki/Landers,_California' target='_blank' rel='noopener noreferrer'>Landers, CA</a>. It had a great air conditioning system and a pair of hammocks that Alyssa and I used daily.</p>
         <ImageContainer columns='2'>
-          <BlogImage src={hammockView} alt={dictionary.hammockViewAlt} caption='View from the hammocks.' />
-          <BlogImage src={inHammocks} alt={dictionary.inHammocksAlt} caption='Alyssa and I enjoying the hammocks.' />
+          <BlogImageByName
+            name='view-from-hammocks'
+            alt={dictionary.hammockViewAlt}
+            caption='View from the hammocks.'
+          />
+          <BlogImageByName
+            name='us-in-hammocks'
+            alt={dictionary.inHammocksAlt}
+            caption='Alyssa and I enjoying the hammocks.'
+          />
         </ImageContainer>
         <p>To avoid the worst of the heat, Alyssa and I made it to Big Morongo Canyon Preserve each morning by 8am. Thankfully, most of the trails in the Preserve have a lot of shade under the huge trees. We would usually spend two hours in the preserve, exploring the trail and getting lost in the songs of the birds.</p>
         <p>Our last morning at the Preserve was a Wednesday, which is also the day that the local birdwatching group hosts a <a href='https://www.bigmorongo.org/bird-walks/' target='_blank' rel='noopener noreferrer'>Bird Walk!</a> It's open to new bird nerds, so Alyssa and I joined and made some new friends. Every local bird watcher was over 50 years old and happy to share their knowledge and stories about the Preserve. One man told us about the hazard of pointing out nests while on the Bird Walk. He said that the <a href='https://www.allaboutbirds.org/guide/California_Scrub-Jay/overview' target='_blank' rel='noopener noreferrer'>California Scrub-Jays</a> would often follow the bird-watching group and would go search for nests of other birds in the places we pointed to! As predatory as they are, it's also facisinating that the Scrub-Jays are smart enough to follow the humans around and investigate what we point to. Birds are wild.</p>
         <p>I didn't take many pictures while we were there, but I managed to remember to take a few one day while we were in the Preserve. Most of these were taken while we were on the <a href='https://www.bigmorongo.org/trails/mesquite-trail/' target='_blank' rel='noopener noreferrer'>Mesquite Trail</a> on Tuesday, July 12th, 2022.</p>
         <ImageContainer columns='3'>
-          <BlogImage src={bridgeInMequite} alt={dictionary.bridgeInMequiteAlt} caption='A small brdige on Mesquite Trail.' />
-          <BlogImage src={alyssaLooking} alt={dictionary.alyssaLookingAlt} caption='Alyssa looking for a bird.' />
-          <BlogImage src={anotherEdge} alt={dictionary.anotherEdgeAlt} caption='The Northern edge of the Preserve.' />
-          <BlogImage src={deerDeep} alt={dictionary.deerDeepAlt} caption='A deer deep in the Preserve.' />
-          <BlogImage src={theHills} alt={dictionary.theHillsAlt} caption="The hills to the West of the Preserve. Cameo by Alyssa's head." />
-          <BlogImage src={lookingAtThePreserve} alt={dictionary.lookingAtThePreserveAlt} caption='The Preserve from the outside.' />
+          <BlogImageByName
+            name='bridge-in-mesquite'
+            alt={dictionary.bridgeInMequiteAlt}
+            caption='A small brdige on Mesquite Trail.'
+          />
+          <BlogImageByName
+            name='looking-for-bird'
+            alt={dictionary.alyssaLookingAlt}
+            caption='Alyssa looking for a bird.'
+          />
+          <BlogImageByName
+            name='northern-edge'
+            alt={dictionary.anotherEdgeAlt}
+            caption='The Northern edge of the Preserve.'
+          />
+          <BlogImageByName
+            name='deer-deep'
+            alt={dictionary.deerDeepAlt}
+            caption='A deer deep in the Preserve.'
+          />
+          <BlogImageByName
+            name='hill-west'
+            alt={dictionary.theHillsAlt}
+            caption="The hills to the West of the Preserve. Cameo by Alyssa's head."
+          />
+          <BlogImageByName
+            name='view-from-outside'
+            alt={dictionary.lookingAtThePreserveAlt}
+            caption='The Preserve from the outside.'
+          />
         </ImageContainer>
         <p>If you read this far, you <i>may</i> be interested in the birds that we saw while on the trip. While we didn't take any pictures of the birds ourselves (I don't have the patience or the equipment), other fine folks have taken plenty of pictures of all sorts of birds. Here's what we saw, with links to more details if you're into that sort of thing:</p>
         <ul>
