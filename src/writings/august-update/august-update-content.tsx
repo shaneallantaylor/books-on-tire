@@ -58,7 +58,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
     alt: string;
     caption: string;
   }) {
-    const { fullsize, orientation, thumbnail } = images[name];
+    const { blurDataURL, fullsize, orientation, thumbnail } = images[name];
 
     const thumbnailSize = orientation === 'landscape' ? {
       height: 614,
@@ -73,6 +73,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
         <ImageLightbox
           orientation={orientation}
           srcLink={fullsize}
+          blurDataURL={blurDataURL}
         >
           <Image
             src={thumbnail}
@@ -87,6 +88,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
       </figure>
     )
   }
+
 
   return (
     <div>

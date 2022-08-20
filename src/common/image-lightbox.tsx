@@ -56,10 +56,12 @@ export default function ImageLightbox({
   children,
   orientation,
   srcLink,
+  blurDataURL,
 }: {
   children: React.ReactNode;
   orientation: OrientationModel
   srcLink: string;
+  blurDataURL: string;
 }) {
 
   const isLandscape = orientation === 'landscape';
@@ -119,6 +121,8 @@ export default function ImageLightbox({
                 src={srcLink}
                 height={size.height}
                 width={size.width}
+                placeholder='blur'
+                blurDataURL={blurDataURL}
               />
             </div>
             {/* <Dialog.Description>

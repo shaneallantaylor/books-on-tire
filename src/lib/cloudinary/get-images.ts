@@ -1,4 +1,5 @@
 import { buildUrl } from 'cloudinary-build-url';
+import { getPlaiceholder } from 'plaiceholder';
 
 export type OrientationModel = 'landscape' | 'portrait'
 
@@ -8,34 +9,46 @@ type ImageToGetModel = {
 }
 
 export type ImagePropsModel = Record<string, {
-  thumbnail: string;
+  blurDataURL: string;
   fullsize: string;
   orientation: OrientationModel;
+  thumbnail: string;
 }>
 
-export const getImages = (imagesToGet: ImageToGetModel[]): ImagePropsModel => (
-  imagesToGet.reduce((result, { name, orientation }) => {
-    result[name] = {
-      thumbnail: buildUrl(`books-on-tire/${name}`, {
-        cloud: {
-          cloudName: 'dk3ahfitr',
-        },
-        transformations: {
-          transformation: orientation === 'landscape' ? 'thumb_landscape' : 'thumb_portrait',
-        }
-      }),
-      fullsize: buildUrl(`books-on-tire/${name}`, {
-        cloud: {
-          cloudName: 'dk3ahfitr',
-        },
-        transformations: {
-          rawTransformation: 'f_webp,q_auto'
-        }
-      }),
+export const getImages = async (imagesToGet: ImageToGetModel[]): Promise<ImagePropsModel> => (
+  imagesToGet.reduce(async (result, { name, orientation }) => {
+
+    const fullsizeURL = buildUrl(`books-on-tire/${name}`, {
+      cloud: {
+        cloudName: 'dk3ahfitr',
+      },
+      transformations: {
+        rawTransformation: 'f_webp,q_auto'
+      }
+    });
+
+    const thumbnailURL = buildUrl(`books-on-tire/${name}`, {
+      cloud: {
+        cloudName: 'dk3ahfitr',
+      },
+      transformations: {
+        transformation: orientation === 'landscape' ? 'thumb_landscape' : 'thumb_portrait',
+      }
+    });
+
+    const valueFromResultPromise = await result;
+    const { base64 } = await getPlaiceholder(fullsizeURL);
+
+    const newImageValues = {
+      blurDataURL: base64,
+      fullsize: fullsizeURL,
       orientation,
+      thumbnail: thumbnailURL,
+    }
+    return {
+      ...valueFromResultPromise,
+      [name]: newImageValues,
     }
 
-    return result
-
-  }, {} as ImagePropsModel)
+  }, {} as Promise<ImagePropsModel>)
 )

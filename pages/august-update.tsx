@@ -1,18 +1,17 @@
 import { getImages } from '../src/lib/cloudinary/get-images';
 import { AugustUpdatePage } from '../src/writings/august-update';
 
-
 export default AugustUpdatePage;
 
 export async function getStaticProps() {
 
-  const results = getImages([
+  const results = await getImages([
     {
-      name: 'us-in-hammocks',
+      name: 'view-from-hammocks',
       orientation: 'landscape'
     },
     {
-      name: 'view-from-hammocks',
+      name: 'us-in-hammocks',
       orientation: 'landscape'
     },
     {
@@ -39,8 +38,7 @@ export async function getStaticProps() {
       name: 'view-from-outside',
       orientation: 'landscape'
     },
-
-  ])
+  ]);
 
   return {
     props: {
