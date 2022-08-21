@@ -3,13 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { styled } from '../../../stitches.config'
 import ImageLightbox from '../../common/image-lightbox'
+import WritingHeaderSection from '../../common/writing-header-section';
 import type { ImagePropsModel } from '../../lib/cloudinary/get-images';
-
-const HeaderSection = styled('div', {
-  display: 'flex',
-  flexDirection: 'row',
-  marginBottom: '20px',
-});
 
 const ImageContainer = styled('div', {
   display: 'grid',
@@ -99,11 +94,11 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
       </Head>
 
       <main>
-        <HeaderSection>
+        <WritingHeaderSection>
           <h1>
             Bird Walks Between Two Deserts
           </h1>
-        </HeaderSection>
+        </WritingHeaderSection>
         <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the <a href='https://www.bigmorongo.org/' target='_blank' rel='noopener noreferrer'>Big Morongo Canyon Preserve</a> to check out the summer birds. It was beautiful and relaxing.</p>
         <p>We stayed at a cozy house a few miles north of Joshua Tree in the town of <a href='https://en.wikipedia.org/wiki/Landers,_California' target='_blank' rel='noopener noreferrer'>Landers, CA</a>. It had a great air conditioning system and a pair of hammocks that Alyssa and I used daily.</p>
         <ImageContainer columns='2'>
