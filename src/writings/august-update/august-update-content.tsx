@@ -1,35 +1,10 @@
 import Head from 'next/head'
 
 import Image from 'next/image'
-import { styled } from '../../../stitches.config'
 import ImageLightbox from '../../common/image-lightbox'
 import WritingHeaderSection from '../../common/writing-header-section';
+import WritingImageContainer from '../../common/writing-image-container';
 import type { ImagePropsModel } from '../../lib/cloudinary/get-images';
-
-const ImageContainer = styled('div', {
-  display: 'grid',
-  gridGap: '20px',
-  padding: '20px 20px 10px 20px',
-  marginBottom: '20px',
-  border: '1px solid grey',
-  background: 'lightyellow',
-  variants: {
-    columns: {
-      '2': {
-        gridTemplateColumns: '1fr 1fr',
-      },
-      '3': {
-        gridTemplateColumns: '1fr 1fr 1fr',
-      },
-    },
-  },
-  'figcaption': {
-    fontSize: '12px',
-    color: 'grey',
-    lineHeight: 1,
-    paddingTop: '6px',
-  }
-});
 
 const dictionary = {
   hammockViewAlt: 'Clear blue skies over a desert landscape with two hammock posts in the foreground.',
@@ -101,7 +76,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
         </WritingHeaderSection>
         <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the <a href='https://www.bigmorongo.org/' target='_blank' rel='noopener noreferrer'>Big Morongo Canyon Preserve</a> to check out the summer birds. It was beautiful and relaxing.</p>
         <p>We stayed at a cozy house a few miles north of Joshua Tree in the town of <a href='https://en.wikipedia.org/wiki/Landers,_California' target='_blank' rel='noopener noreferrer'>Landers, CA</a>. It had a great air conditioning system and a pair of hammocks that Alyssa and I used daily.</p>
-        <ImageContainer columns='2'>
+        <WritingImageContainer columns='2'>
           <BlogImageByName
             name='view-from-hammocks'
             alt={dictionary.hammockViewAlt}
@@ -112,11 +87,11 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
             alt={dictionary.inHammocksAlt}
             caption='Alyssa and I enjoying the hammocks.'
           />
-        </ImageContainer>
+        </WritingImageContainer>
         <p>To avoid the worst of the heat, Alyssa and I made it to Big Morongo Canyon Preserve each morning by 8am. Thankfully, most of the trails in the Preserve have a lot of shade under the huge trees. We would usually spend two hours in the preserve, exploring the trail and getting lost in the songs of the birds.</p>
         <p>Our last morning at the Preserve was a Wednesday, which is also the day that the local birdwatching group hosts a <a href='https://www.bigmorongo.org/bird-walks/' target='_blank' rel='noopener noreferrer'>Bird Walk!</a> It's open to new bird nerds, so Alyssa and I joined and made some new friends. Every local bird watcher was over 50 years old and happy to share their knowledge and stories about the Preserve. One man told us about the hazard of pointing out nests while on the Bird Walk. He said that the <a href='https://www.allaboutbirds.org/guide/California_Scrub-Jay/overview' target='_blank' rel='noopener noreferrer'>California Scrub-Jays</a> would often follow the bird-watching group and would go search for nests of other birds in the places we pointed to! As predatory as they are, it's also facisinating that the Scrub-Jays are smart enough to follow the humans around and investigate what we point to. Birds are wild.</p>
         <p>I didn't take many pictures while we were there, but I managed to remember to take a few one day while we were in the Preserve. Most of these were taken while we were on the <a href='https://www.bigmorongo.org/trails/mesquite-trail/' target='_blank' rel='noopener noreferrer'>Mesquite Trail</a> on Tuesday, July 12th, 2022.</p>
-        <ImageContainer columns='3'>
+        <WritingImageContainer columns='3'>
           <BlogImageByName
             name='bridge-in-mesquite'
             alt={dictionary.bridgeInMequiteAlt}
@@ -147,7 +122,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
             alt={dictionary.lookingAtThePreserveAlt}
             caption='The Preserve from the outside.'
           />
-        </ImageContainer>
+        </WritingImageContainer>
         <p>If you read this far, you <i>may</i> be interested in the birds that we saw while on the trip. While we didn't take any pictures of the birds ourselves (I don't have the patience or the equipment), other fine folks have taken plenty of pictures of all sorts of birds. Here's what we saw, with links to more details if you're into that sort of thing:</p>
         <ul>
           <li><a href='https://www.allaboutbirds.org/guide/Vermilion_Flycatcher/overview' target='_blank' rel='noopener noreferrer'>Vermilion Flycatcher</a></li>
