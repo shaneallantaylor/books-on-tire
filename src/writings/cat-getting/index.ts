@@ -1,0 +1,1 @@
+export { CatGettingPage } from './cat-getting-page';

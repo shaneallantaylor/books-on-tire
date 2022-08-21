@@ -1,0 +1,1 @@
+export { CatGettingContent as CatGettingPage } from './cat-getting-content';
