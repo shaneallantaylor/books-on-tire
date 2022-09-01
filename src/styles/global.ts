@@ -26,7 +26,7 @@ export const globalStyles = globalCss({
     height: "100%",
     lineHeight: "1.5",
     fontSmoothing: "antialiased",
-    fontFamily: "$nice"
+    fontFamily: "$nice",
   },
   "main > p:first-of-type:before": {
     content: getRandomEmoji(),
@@ -35,17 +35,18 @@ export const globalStyles = globalCss({
     lineHeight: 1.2,
     fontWeight: "bold",
     marginRight: "50px",
-    color: "#000",
     fontFamily: "serif",
-    textShadow: "#d7d7d7 0.04em 0.04em"
+    textShadow: "$colors$emojiDropShadow 0.04em 0.04em"
   },
   "a[target='_blank']": {
-    color: "green",
+    color: "$linkExternal",
   },
   "a[target='_blank']::after": {
     content: " \\29C9"
     // content: " \\1f855"
-
+  },
+  "a[target='_blank']:visited": {
+    color: "$linkExternalVisited",
   },
   "img": {
     display: "block",

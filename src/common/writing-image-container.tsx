@@ -6,8 +6,8 @@ const StyledWritingImageContainer = styled('div', {
   gridGap: '20px',
   padding: '20px 20px 10px 20px',
   marginBottom: '20px',
-  border: '1px solid grey',
-  background: 'lightyellow',
+  border: '1px solid $imageContainerBorder',
+  background: '$imageContainerBackground',
   gridTemplateColumns: '1fr',
   variants: {
     columns: {
@@ -25,7 +25,7 @@ const StyledWritingImageContainer = styled('div', {
   },
   'figcaption': {
     fontSize: '12px',
-    color: 'grey',
+    color: '$caption',
     lineHeight: 1,
     paddingTop: '6px',
   }

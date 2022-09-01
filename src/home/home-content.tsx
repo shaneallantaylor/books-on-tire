@@ -13,7 +13,7 @@ export function HomeContent() {
         <h1>
           Home
         </h1>
-        <p>Wow, I really love cats</p>
+        <p>Wow, I really love SQUISH</p>
       </main>
     </div>
   )

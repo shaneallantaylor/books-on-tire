@@ -86,8 +86,6 @@ export default function ImageLightbox({
     lgAndUp: '38vw'
   }
 
-
-
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild style={{ cursor: 'pointer' }}>

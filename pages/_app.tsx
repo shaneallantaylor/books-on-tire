@@ -3,16 +3,21 @@ import Header from '../src/common/header';
 import Footer from '../src/common/footer';
 import Layout from '../src/common/layout';
 import { globalStyles } from '../src/styles/global';
+import { ThemeProvider } from '../src/context/theme-context';
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
+
+
   return (
     <>
-      <Header />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Footer />
+      <ThemeProvider>
+        <Header />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <Footer />
+      </ThemeProvider>
     </>
   )
 }
