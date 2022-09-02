@@ -10,6 +10,7 @@ const StyledWrapper = styled('div', {
   backgroundColor: '$primaryBackground',
   color: "$primary",
   transition: '$themeChange',
+  minHeight: '100%'
 })
 
 // Create Context object.

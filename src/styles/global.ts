@@ -27,6 +27,7 @@ export const globalStyles = globalCss({
     lineHeight: "1.5",
     fontSmoothing: "antialiased",
     fontFamily: "$nice",
+    overscrollBehavior: 'none',
   },
   "main > p:first-of-type:before": {
     content: getRandomEmoji(),
