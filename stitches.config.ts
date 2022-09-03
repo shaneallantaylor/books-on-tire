@@ -37,6 +37,7 @@ export const {
       imageContainerBackground: '$crimson110',
       imageContainerBorder: '$crimson170',
       primary: '$black900',
+      themeButtonBackground: '$yt',
       linkExternal: '$crimson200',
       linkExternalVisited: '$orange200',
       caption: '$redsand300',
@@ -72,7 +73,7 @@ export const {
   },
 });
 
-const darkTheme = createTheme({
+const pslTheme = createTheme({
   colors: {
     action: 'green',
     emojiDropShadow: 'hsl(0deg 0% 0%)',
@@ -82,11 +83,33 @@ const darkTheme = createTheme({
     // imageContainerBorder: 'hsl(31deg 100% 47%)',
     imageContainerBorder: 'hsl(21deg 49% 13%)',
     primary: 'hsl(203deg 100% 98%)',
+    themeButtonBackground: 'transparent',
     // linkExternal: 'hsl(11deg 89% 55%)',
     // linkExternal: 'hsl(0deg 0% 100%)',
     // linkExternal: 'hsl(24deg 62% 55%)',
     linkExternal: 'hsl(41deg 39% 65%)',
-    caption: 'hsl(198deg 39% 50%)',
+    linkExternalVisited: 'hsl(41deg 39% 65%)',
+    caption: 'hsl(17deg 39% 50%)',
+    nudge: 'hsl(214, 37%, 30%)'
+  }
+});
+
+const ageOfStarsTheme = createTheme({
+  colors: {
+    action: 'green',
+    emojiDropShadow: 'hsl(0deg 0% 0%)',
+    headerBackground: 'hsla(214, 65%, 9%, 80%)',
+    primaryBackground: 'hsl(214, 65%, 9%)',
+    imageContainerBackground: 'hsl(235, 100%, 5%)',
+    imageContainerBorder: 'hsl(211, 49%, 13%)',
+    primary: 'hsl(203deg 100% 98%)',
+    themeButtonBackground: 'transparent',
+    // linkExternal: 'hsl(11deg 89% 55%)',
+    // linkExternal: 'hsl(0deg 0% 100%)',
+    // linkExternal: 'hsl(24deg 62% 55%)',
+    linkExternal: 'hsl(203, 100%, 71%)',
+    linkExternalVisited: 'hsl(203, 100%, 71%)',
+    caption: 'hsl(208, 34%, 73%)',
     nudge: 'hsl(214, 37%, 30%)'
   }
 });
@@ -99,8 +122,10 @@ export const gradientShift = keyframes({
 
 export function getThemeClassName(theme: string) {
   switch (theme) {
-    case 'dark':
-      return darkTheme;
+    case 'psl':
+      return pslTheme;
+    case 'ageOfStars':
+      return ageOfStarsTheme;
     default:
       return '';
   }

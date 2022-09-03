@@ -1,6 +1,6 @@
 import { getThemeClassName, gradientShift, styled } from "../../stitches.config";
 import { useThemeContext } from "../context/theme-context";
-import { MagicWandIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
+import { MagicWandIcon, SunIcon, MoonIcon, ShadowInnerIcon } from '@radix-ui/react-icons';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { redirect } from "next/dist/server/api-utils";
 
@@ -34,7 +34,7 @@ const DropdownTrigger = styled(DropdownMenu.Trigger, {
   cursor: 'pointer',
   borderRadius: '4px',
   padding: '10px',
-  background: '$primaryBackground',
+  background: '$themeButtonBackground',
 
 
 
@@ -144,10 +144,13 @@ function ThemeSelector() {
         <DropdownContent className={themeClassName} loop={true}>
           <DropdownMenu.RadioGroup value={theme} onValueChange={setTheme}>
             <ThemeOption value="base">
-              <SunIcon height={15} width={15} /> Light
+              <SunIcon height={15} width={15} /> Notion-esque
             </ThemeOption>
-            <ThemeOption value="dark">
-              <MoonIcon height={15} width={15} /> Dark
+            <ThemeOption value="psl">
+              <ShadowInnerIcon height={15} width={15} /> Pumpkin Spice
+            </ThemeOption>
+            <ThemeOption value="ageOfStars">
+              <MoonIcon height={15} width={15} /> Age of Stars
             </ThemeOption>
           </DropdownMenu.RadioGroup>
           <DropdownMenu.Separator />
