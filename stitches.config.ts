@@ -44,8 +44,8 @@ export const {
       nudge: '$lemon200'
     },
     fonts: {
-      nice: 'Inter, serif, apple-system, sans-serif',
-      code: 'Söhne Mono, menlo, monospace',
+      nice: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+      code: 'Consolas, monaco, monospace',
     },
     fontSizes: {
     },
@@ -57,7 +57,7 @@ export const {
     sizes: {},
     space: {},
     transitions: {
-      themeChange: 'all 0.2s ease',
+      themeChange: 'all 0.2s ease, letter-spacing 0s',
     },
     zIndices: {},
 
