@@ -24,10 +24,6 @@ export const globalStyles = globalCss({
   },
   "body": {
     height: "100%",
-    letterSpacing: '0.3px',
-    lineHeight: "1.5",
-    fontSmoothing: "antialiased",
-    fontFamily: "$nice",
     overscrollBehavior: 'none',
   },
   "main > p:first-of-type:before": {
