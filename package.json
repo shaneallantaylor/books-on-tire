@@ -17,6 +17,7 @@
     "@stitches/react": "^1.2.8",
     "@types/uuid": "^8.3.4",
     "cloudinary-build-url": "^0.2.4",
+    "critters": "^0.0.16",
     "jotai": "^1.7.5",
     "next": "12.1.6",
     "plaiceholder": "^2.4.0",

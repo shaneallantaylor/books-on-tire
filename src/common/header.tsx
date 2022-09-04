@@ -167,7 +167,7 @@ export default function Header() {
     <HeaderContainer>
       <HeaderP>Stuff I Wrote</HeaderP>
       <nav>
-        <ThemeSelector />
+        {/* <ThemeSelector /> */}
       </nav>
     </HeaderContainer>
   )
