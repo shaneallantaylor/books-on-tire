@@ -137,7 +137,7 @@ function ThemeSelector() {
 
   return (
     <DropdownRoot>
-      <DropdownTrigger>
+      <DropdownTrigger aria-label="theme-selector">
         <MagicWandIcon height={20} width={20} />
       </DropdownTrigger>
       <DropdownMenu.Portal>
