@@ -1,4 +1,4 @@
-import { globalCss } from '@stitches/react';
+import { globalCss } from '../../stitches.config';
 
 function getRandomEmoji() {
   const possibleEmojis = ['👋🏻', '🫠', '🦜', '🎉', '💎', '📔', '🍉'];
