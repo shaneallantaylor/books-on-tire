@@ -38,8 +38,8 @@ export const {
       imageContainerBorder: '$crimson170',
       primary: '$black900',
       themeButtonBackground: '$yt',
-      linkExternal: '$crimson200',
-      linkExternalVisited: '$orange200',
+      linkExternal: 'tomato',
+      linkExternalVisited: 'tomato',
       caption: '$redsand300',
       nudge: '$lemon200'
     },

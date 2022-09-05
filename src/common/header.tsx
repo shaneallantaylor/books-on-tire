@@ -2,13 +2,15 @@ import { getThemeClassName, gradientShift, styled } from "../../stitches.config"
 import { useThemeContext } from "../context/theme-context";
 import { MagicWandIcon, SunIcon, MoonIcon, ShadowInnerIcon } from '@radix-ui/react-icons';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import { redirect } from "next/dist/server/api-utils";
+import Link from "next/link";
 
 const HeaderContainer = styled('header', {
   height: '72px',
   width: '100%',
-  backgroundColor: '$headerBackground',
-  backdropFilter: 'saturate(180%) blur(20px)',
+  // backgroundColor: 'hsla(0, 0%, 0%, 10%);',
+  // backdropFilter: 'saturate(180%) blur(20px)',
+  backdropFilter: 'blur(25px)',
+  // boxShadow: '0px -60px 80px 20px rgb(255 255 255 / 75%)',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -17,20 +19,38 @@ const HeaderContainer = styled('header', {
   top: 0,
   zIndex: 1,
   transition: '$themeChange',
+
+  '& a': {
+    color: 'whitesmoke',
+    textShadow: '0px 0px 4px black',
+    textDecoration: 'none',
+    fontWeight: '500',
+    display: 'inline-block',
+    position: 'relative',
+    '&:hover::after': {
+      height: '2px',
+      width: '105%',
+      bottom: '-1px',
+      background: 'tomato',
+    },
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      background: 'whitesmoke',
+      bottom: '-3px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      transition: 'all 0.3s ease',
+      width: '99%',
+      height: '3px',
+    }
+  }
 })
 
-const HeaderP = styled('p', {
-  padding: 0,
-})
 
 const DropdownTrigger = styled(DropdownMenu.Trigger, {
   all: 'unset',
   position: 'relative',
-  // display: 'inline-block',
-  // width: '60px',
-  // height: '34px',
-  // background: 'red',
-  // outline: '1px solid black',
   cursor: 'pointer',
   borderRadius: '4px',
   padding: '10px',
@@ -165,7 +185,9 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <HeaderP>Stuff I Wrote</HeaderP>
+      <Link href="/">
+        <a>Stuff I Wrote</a>
+      </Link>
       <nav>
         {/* <ThemeSelector /> */}
       </nav>

@@ -23,10 +23,12 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
     name,
     alt,
     caption,
+    priority = false
   }: {
     name: string;
     alt: string;
     caption: string;
+    priority?: boolean;
   }) {
     const { blurDataURL, fullsize, orientation, thumbnail } = images[name];
 
@@ -51,6 +53,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
             height={thumbnailSize.height}
             width={thumbnailSize.width}
             layout="responsive"
+            priority={priority}
           />
         </ImageLightbox>
         <figcaption>{caption}</figcaption>
@@ -79,6 +82,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
           name='view-from-hammocks'
           alt={dictionary.hammockViewAlt}
           caption='View from the hammocks.'
+          priority={true}
         />
         <BlogImageByName
           name='us-in-hammocks'

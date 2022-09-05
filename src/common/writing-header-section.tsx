@@ -5,6 +5,7 @@ const StyledWritingHeaderSection = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   marginBottom: '20px',
+  color: 'whitesmoke',
 });
 
 
