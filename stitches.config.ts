@@ -34,13 +34,13 @@ export const {
       emojiDropShadow: '$gray250',
       primaryBackground: '$yt',
       headerBackground: 'hsl(0deg 0% 100% / 80%)',
-      imageContainerBackground: '$crimson110',
-      imageContainerBorder: '$crimson170',
+      imageContainerBackground: 'hsla(0, 0%, 100%, 8%)',
+      imageContainerBorder: 'none',
       primary: '$black900',
       themeButtonBackground: '$yt',
       linkExternal: 'tomato',
       linkExternalVisited: 'tomato',
-      caption: '$redsand300',
+      caption: 'antiquewhite',
       nudge: '$lemon200'
     },
     fonts: {

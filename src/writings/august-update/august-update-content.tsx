@@ -1,10 +1,17 @@
 import Head from 'next/head'
 
 import Image from 'next/image'
+import { styled } from '../../../stitches.config';
 import ImageLightbox from '../../common/image-lightbox'
 import WritingHeaderSection from '../../common/writing-header-section';
 import WritingImageContainer from '../../common/writing-image-container';
 import type { ImagePropsModel } from '../../lib/cloudinary/get-images';
+
+const StyledList = styled('ul', {
+  '& a': {
+    fontSize: '1.25rem'
+  }
+})
 
 const dictionary = {
   hammockViewAlt: 'Clear blue skies over a desert landscape with two hammock posts in the foreground.',
@@ -126,7 +133,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
         />
       </WritingImageContainer>
       <p>If you read this far, you <i>may</i> be interested in the birds that we saw while on the trip. While we didn't take any pictures of the birds ourselves (I don't have the patience or the equipment), other fine folks have taken plenty of pictures of all sorts of birds. Here's what we saw, with links to more details if you're into that sort of thing:</p>
-      <ul>
+      <StyledList>
         <li><a href='https://www.allaboutbirds.org/guide/Vermilion_Flycatcher/overview' target='_blank' rel='noopener noreferrer'>Vermilion Flycatcher</a></li>
         <li><a href='https://www.allaboutbirds.org/guide/Yellow_Warbler/overview' target='_blank' rel='noopener noreferrer'>Yellow Warbler</a></li>
         <li><a href='https://www.allaboutbirds.org/guide/Summer_Tanager/overview' target='_blank' rel='noopener noreferrer'>Summer Tanger</a></li>
@@ -147,7 +154,7 @@ export function AugustUpdateContent({ images }: { images: ImagePropsModel }) {
         <li><a href='https://www.allaboutbirds.org/guide/Western_Bluebird/overview' target='_blank' rel='noopener noreferrer'>Western Bluebird</a></li>
         <li><a href='https://www.allaboutbirds.org/guide/Oak_Titmouse/overview' target='_blank' rel='noopener noreferrer'>Oak Titmouse</a></li>
         <li><a href='https://www.allaboutbirds.org/guide/Black-throated_Sparrow/overview' target='_blank' rel='noopener noreferrer'>Black-throated Sparrow</a></li>
-      </ul>
+      </StyledList>
     </>
   )
 }

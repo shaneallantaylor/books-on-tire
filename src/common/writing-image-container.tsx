@@ -24,7 +24,8 @@ const StyledWritingImageContainer = styled('div', {
     },
   },
   'figcaption': {
-    fontSize: '12px',
+    fontSize: '1rem',
+    fontWeight: '200',
     color: '$caption',
     lineHeight: 1,
     paddingTop: '6px',
