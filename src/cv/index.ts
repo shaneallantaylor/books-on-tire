@@ -1,0 +1,1 @@
+export { CVPage } from './cv-page';

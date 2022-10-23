@@ -182,7 +182,7 @@ export function HomeContent() {
       </HomeSection>
 
       <HomeSection>
-        <h2>Career Shit</h2>
+        <h2>Professional Things</h2>
         <WorkRoll>
           <li>
             <Link href="/">
