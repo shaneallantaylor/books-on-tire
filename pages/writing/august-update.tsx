@@ -1,5 +1,5 @@
-import { getImages } from '../src/lib/cloudinary/get-images';
-import { AugustUpdatePage } from '../src/writings/august-update';
+import { getImages } from '../../src/lib/cloudinary/get-images';
+import { AugustUpdatePage } from '../../src/writings/august-update';
 
 export default AugustUpdatePage;
 

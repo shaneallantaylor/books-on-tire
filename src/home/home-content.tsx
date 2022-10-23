@@ -36,8 +36,6 @@ const BlogRoll = styled('div', {
     },
   },
   '& a': {
-    borderRadius: '6px',
-    border: '2px solid hsla(9, 100%, 64%, 42%)',
     padding: '20px',
     color: 'aliceblue',
     textDecoration: 'none',
@@ -68,9 +66,6 @@ const BlogRoll = styled('div', {
       color: 'lightgray',
       transition: 'color 0.3s ease',
     },
-    '&:hover': {
-      borderColor: 'tomato',
-    },
     '&:hover h4': {
       color: 'tomato',
     },
@@ -94,16 +89,9 @@ const WorkRoll = styled('ul', {
     cursor: 'pointer',
     position: 'relative',
     height: '100%',
-    border: '4px solid hsla(9, 100%, 64%, 42%)',
-    borderRadius: '10px',
-    // background: 'hsla(0, 0%, 0%, 60%)',
     overflow: 'hidden',
     boxShadow: '0px 0px 20px -20px white',
     transition: 'all 0.3s ease',
-    '&:hover': {
-      borderColor: 'tomato',
-      boxShadow: '0px 0px 20px -12px white',
-    },
     '&:hover h3': {
       background: 'hsla(0, 0%, 0%, 60%)',
     },
@@ -144,9 +132,6 @@ const WorkRoll = styled('ul', {
       left: '0',
       width: '100%',
       textAlign: 'center',
-      // borderBottomLeftRadius: '6px',
-      // borderBottomRightRadius: '6px',
-      // background: 'hsla(9, 100%, 64%, 42%)',
       padding: '5px 24px',
       fontSize: '1rem',
       fontWeight: 'bold',
@@ -172,7 +157,7 @@ export function HomeContent() {
           Writings
         </h2>
         <BlogRoll>
-          <Link href="/august-update">
+          <Link href="/writing/august-update">
             <a>
               <h4>Bird Walks Between Two Deserts</h4>
               <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the Big Morongo Canyon Preserve to check out the summer birds. It was beautiful and relaxing. We stayed at a cozy house a few...</p>
