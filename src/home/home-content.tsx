@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image';
 import Link from 'next/link'
 import { styled } from '../../stitches.config'
 
@@ -158,10 +157,8 @@ export function HomeContent() {
         </h2>
         <BlogRoll>
           <Link href="/writing/august-update">
-            <a>
-              <h4>Bird Walks Between Two Deserts</h4>
-              <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the Big Morongo Canyon Preserve to check out the summer birds. It was beautiful and relaxing. We stayed at a cozy house a few...</p>
-            </a>
+            <h4>Bird Walks Between Two Deserts</h4>
+            <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the Big Morongo Canyon Preserve to check out the summer birds. It was beautiful and relaxing. We stayed at a cozy house a few...</p>
           </Link>
         </BlogRoll>
       </HomeSection>

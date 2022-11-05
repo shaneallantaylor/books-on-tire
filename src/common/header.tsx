@@ -185,9 +185,7 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <Link href="/">
-        <a>Stuff I Wrote</a>
-      </Link>
+      <Link href="/">Stuff I Wrote</Link>
       <nav>
         {/* <ThemeSelector /> */}
       </nav>
