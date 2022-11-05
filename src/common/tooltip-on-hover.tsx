@@ -38,7 +38,7 @@ const ContentContainer = styled('div', {
 export default function TooltipOnHover({
   children,
   content,
-  ...props
+  // ...props
 }: {
   children: React.ReactNode,
   content: string,
@@ -50,7 +50,7 @@ export default function TooltipOnHover({
         <TooltipPrimitive.Trigger asChild>
           {children}
         </ TooltipPrimitive.Trigger>
-        <TooltipContent {...props}>
+        <TooltipContent>
           <ContentContainer>
             <span>{content}</span>
           </ContentContainer>

@@ -3,7 +3,6 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 
 import { styled, keyframes } from '../../stitches.config';
-import type { OrientationModel } from '../lib/cloudinary/get-images';
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -26,11 +25,14 @@ const Overlay = styled(Dialog.Overlay, {
   },
 });
 
-const Content = styled(Dialog.Content, {
-  background: '#121212',
-  padding: '20px',
-  lineHeight: 0,
-});
+const ImageContainer = styled('div', {
+  position: 'absolute',
+  top: '50%',
+  left: '0',
+  height: '80vh',
+  width: '100%',
+  transform: 'translateY(-50%)',
+})
 
 const IconButton = styled('button', {
   all: 'unset',
@@ -46,6 +48,7 @@ const IconButton = styled('button', {
   cursor: 'pointer',
   top: 20,
   right: 20,
+  zIndex: 1,
   transition: 'all 0.3s ease',
   border: '1px solid white',
 
@@ -54,37 +57,13 @@ const IconButton = styled('button', {
 
 export default function ImageLightbox({
   children,
-  orientation,
   srcLink,
   blurDataURL,
 }: {
   children: React.ReactNode;
-  orientation: OrientationModel
   srcLink: string;
   blurDataURL: string;
 }) {
-
-  const isLandscape = orientation === 'landscape';
-
-  const size = isLandscape ? {
-    height: 1536,
-    width: 2048
-  } : {
-    height: 4032,
-    width: 3024
-  };
-
-  const maxWidth = isLandscape ? {
-    base: '90vw',
-    smAndUp: '90',
-    medAndUp: '90vw',
-    lgAndUp: '62vw'
-  } : {
-    base: '90vw',
-    smAndUp: '70vw',
-    medAndUp: '50vw',
-    lgAndUp: '38vw'
-  }
 
   return (
     <Dialog.Root>
@@ -93,40 +72,23 @@ export default function ImageLightbox({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Overlay>
-          <Content
-            css={{
-              maxWidth: maxWidth.base, // smallest - portrait
-              '@smAndUp': {
-                maxWidth: maxWidth.smAndUp, // small - portrait
-              },
-              '@medAndUp': {
-                maxWidth: maxWidth.medAndUp, // med - portrait
-              },
-              '@lgAndUp': {
-                //   background: 'white',
-                //   minWidth: '40vw',
-                // maxWidth: '62vw', // landscape
-                maxWidth: maxWidth.lgAndUp,
-              },
-            }}>
+          <Dialog.Content>
             <Dialog.Close asChild>
               <IconButton aria-label="Close">
                 <Cross2Icon height={20} width={20} />
               </IconButton>
             </Dialog.Close>
-            <div>
+            <ImageContainer>
               <Image
                 src={srcLink}
-                height={size.height}
-                width={size.width}
                 placeholder='blur'
                 blurDataURL={blurDataURL}
+                alt=''
+                fill={true}
+                style={{ objectFit: 'contain' }}
               />
-            </div>
-            {/* <Dialog.Description>
-              {description}
-            </Dialog.Description> */}
-          </Content>
+            </ImageContainer>
+          </Dialog.Content>
         </Overlay>
       </Dialog.Portal>
     </Dialog.Root>

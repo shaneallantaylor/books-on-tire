@@ -27,7 +27,6 @@ export default function WritingImage({
   return (
     <figure>
       <ImageLightbox
-        orientation={orientation}
         srcLink={fullsize}
         blurDataURL={blurDataURL}
       >
@@ -36,7 +35,12 @@ export default function WritingImage({
           alt={alt}
           height={thumbnailSize.height}
           width={thumbnailSize.width}
-          layout="responsive"
+          style={{
+            height: 'auto',
+            width: '100%',
+            color: 'transparent',
+            cursor: 'pointer',
+          }}
           priority={priority}
         />
       </ImageLightbox>
