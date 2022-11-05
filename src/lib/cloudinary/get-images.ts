@@ -8,14 +8,18 @@ type ImageToGetModel = {
   orientation: OrientationModel
 }
 
-export type ImagePropsModel = Record<string, {
+export type ImagePropsModel = {
   blurDataURL: string;
   fullsize: string;
   orientation: OrientationModel;
   thumbnail: string;
-}>
+}
 
-export const getImages = async (imagesToGet: ImageToGetModel[]): Promise<ImagePropsModel> => (
+type ImageModel<Name extends string> = Record<Name, ImagePropsModel>
+
+export type NamedImagePropsModel<Name extends string> = ImageModel<Name>;
+
+export const getImages = async (imagesToGet: readonly ImageToGetModel[]): Promise<NamedImagePropsModel<typeof imagesToGet[number]['name']>> => (
   imagesToGet.reduce(async (result, { name, orientation }) => {
 
     const fullsizeURL = buildUrl(`books-on-tire/${name}`, {
@@ -50,5 +54,5 @@ export const getImages = async (imagesToGet: ImageToGetModel[]): Promise<ImagePr
       [name]: newImageValues,
     }
 
-  }, {} as Promise<ImagePropsModel>)
+  }, {} as Promise<NamedImagePropsModel<''>>)
 )

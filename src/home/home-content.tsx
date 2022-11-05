@@ -166,7 +166,7 @@ export function HomeContent() {
         </BlogRoll>
       </HomeSection>
 
-      <HomeSection>
+      {/* <HomeSection>
         <h2>Professional Things</h2>
         <WorkRoll>
           <li>
@@ -216,7 +216,7 @@ export function HomeContent() {
             </Link>
           </li>
         </WorkRoll>
-      </HomeSection>
+      </HomeSection> */}
 
 
     </>
