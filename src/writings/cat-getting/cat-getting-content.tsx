@@ -19,7 +19,11 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
     <div>
       <Head>
         <title>The Cat Life</title>
-        <meta name="description" content="Writing to share" />
+
+        <meta property="og:title" content="The Cat Life" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="We've both wanted a cat for a long time. We've been nervous about fucking things up." />
+        <meta property="og:image" content="https://res.cloudinary.com/dk3ahfitr/image/upload/v1667766124/books-on-tire/og_image_books_on_tire_jomhnk.jpg" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -28,7 +32,7 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
             Cat is Scary; Cat is Fun!
           </h1>
         </WritingHeaderSection>
-        <p>We've both wanted a cat for a long time. We're nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
+        <p>We've both wanted a cat for a long time. We've been nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
         <p>We finally got a cat and her name is <b>Squish</b>!</p>
         <p>Squish is a six-year-old cat with solid black fur. She is timid, food-driven, and ready to play at any time. She had some signs of fleas/worms in her first week with us, so she quickly became acquainted with a new veterinarian. She did so well in her cat carrier and during her visit with the vet. She is a fucking champ.</p>
         <WritingImageContainer columns='2'>
