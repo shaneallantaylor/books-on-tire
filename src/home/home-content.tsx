@@ -158,7 +158,7 @@ export function HomeContent() {
         <BlogRoll>
           <Link href="/writing/cat-getting">
             <h4>We Got A Cat!</h4>
-            <p>We've both wanted a cat for a long time. We're nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
+            <p>We've both wanted a cat for a long time. We've been nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
           </Link>
           <Link href="/writing/august-update">
             <h4>Bird Walks Between Two Deserts</h4>
