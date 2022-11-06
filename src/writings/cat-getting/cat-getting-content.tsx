@@ -49,14 +49,14 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
             priority={true}
           />
         </WritingImageContainer>
-        <p>What we have done to prepare:</p>
+        <p>What we did to prepare:</p>
         <StyledList>
           <li>Get a fancy litter box (Litter-Robot)</li>
           <li>Get a fancy automatic feeder</li>
           <li>Get a water bowl</li>
           <li>Get a cat carrier</li>
           <li>Get a cat bag (<i>yes</i>, <a href='https://www.cat-in-the-bag.com/' target='_blank' rel='noopener noreferrer'>they are different</a>)</li>
-          <li><b>Make</b> a litter station</li>
+          <li><b>Build</b> a litter station</li>
           <li>Get <i>too many</i> cat toys</li>
           <li>Become convinced we cannot handle caring for a cat</li>
         </StyledList>
@@ -70,7 +70,7 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
           <WritingImage
             image={images['squish-berg']}
             alt={dictionary.squishBergAlt}
-            caption='Squish in the Halloween spirit'
+            caption="Ruth Bader Squishburg's Supreme Court confirmation photo"
           />
           <WritingImage
             image={images['squish-play']}
@@ -83,11 +83,11 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
         <StyledList>
           <li>Get a slow-feeder for Squish's dry food and wet food</li>
           <li><b>Make</b> an extension for her fancy automatic feeder so it can work with the dry food slow-feeder</li>
-          <li><b>Make</b> crocheted toys for her, including a Totoro, a basketball, and various strings</li>
+          <li><b>Crochet</b> toys for her, including a <a href='https://www.imdb.com/title/tt0096283/' target='_blank' rel='noopener noreferrer'>Totoro</a>, a basketball, and a training ball</li>
           <li>Project <i>all of our feelings</i> onto her</li>
           <li>Discover that the cat bag may not be amazing for her</li>
-          <li>Lost valuable bed space to her entitled ass ploping down in the goddamn middle of the fucking bed</li>
-          <li><b>Make</b> a cat bed for her that is snug, which we call her bucket</li>
+          <li>Lose valuable bed space to her entitled ass ploping down in the goddamn middle of the fucking bed</li>
+          <li><b>Knit</b> her a snug cat bed, which we call her bucket</li>
           <li>Confirm that caring for a cat brings up all sorts of childhood trauma</li>
         </StyledList>
 
