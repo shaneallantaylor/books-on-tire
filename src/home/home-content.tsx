@@ -156,6 +156,10 @@ export function HomeContent() {
           Writings
         </h2>
         <BlogRoll>
+          <Link href="/writing/cat-getting">
+            <h4>We Got A Cat!</h4>
+            <p>We've both wanted a cat for a long time. We're nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
+          </Link>
           <Link href="/writing/august-update">
             <h4>Bird Walks Between Two Deserts</h4>
             <p>In the middle of July, Alyssa and I went to Joshua Tree and visited the Big Morongo Canyon Preserve to check out the summer birds. It was beautiful and relaxing. We stayed at a cozy house a few...</p>

@@ -28,7 +28,7 @@ export function CatGettingContent({ images }: { images: NamedImagePropsModel<Cat
             Cat is Scary; Cat is Fun!
           </h1>
         </WritingHeaderSection>
-        <p>We've both wanted a cat for a long time. We are finally getting one. We're nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
+        <p>We've both wanted a cat for a long time. We're nervous about fucking things up. But I think we'll be okay because we'll support each other.</p>
         <p>We finally got a cat and her name is <b>Squish</b>!</p>
         <p>Squish is a six-year-old cat with solid black fur. She is timid, food-driven, and ready to play at any time. She had some signs of fleas/worms in her first week with us, so she quickly became acquainted with a new veterinarian. She did so well in her cat carrier and during her visit with the vet. She is a fucking champ.</p>
         <WritingImageContainer columns='2'>
